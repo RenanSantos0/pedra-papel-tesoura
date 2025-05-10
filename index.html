@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedra papel tesoura</title>
+  <link rel="stylesheet" href="style.css">  
 </head>
 <body>
   <header>
@@ -12,11 +13,32 @@
   <main>
     <h2>Jogue contra o computador</h2>
     <p id="resultado">Escolha entre pedra, papel ou tesoura e veja quem ganha!</p>
-    <button id="jogue-pedra">Jogue pedra</button>
-    <button id="jogue-papel">Jogue papel</button>
-    <button id="jogue-tesoura">Jogue tesoura</button>
+    <div class="resultados-container">
+      <div class="resultado">
+        <div class="player-name">JOGADOR</div>
+        <div class="image-player-choseen">
+          <img id="imagem-jogador" width="200px">
+        </div>
+      </div>
+      <div class="resultado">
+        <div class="computer-name"></div>
+        <div class="image-computer-choseen"></div>
+      </div>
+    </div>
+
     <h1>Human score: <span id="human-score"></span></h1>
     <h1>Computer score: <span id="computer-score"></span></h1>
+    <div class="barra">
+    </div>
+    <div class="footer">
+      <div class="buttons">
+        <div id="jogue-pedra">PEDRA</div>
+        <div id="jogue-papel">PAPEL</div>
+        <div id="jogue-tesoura">TESOURA</div>
+      </div>
+    </div>
+
+
   </main>
   <script src="javascript.js"></script>
 </body>

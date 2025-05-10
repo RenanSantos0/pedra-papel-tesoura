@@ -2,7 +2,7 @@ let humanScore = 0;
 let computerScore = 0;
 let empates = 0
 
-
+let imagem = document.querySelector("#imagem-jogador")
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*3)
     switch (randomNumber){
@@ -15,12 +15,15 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
+function getHumanChoice(escolha) {
     if(escolha == "pedra"){
+        imagem.setAttribute("src", "images/pedra.png")
         return escolha
     } else if (escolha == "papel"){
+        imagem.setAttribute("src", "images/paper.png")
         return escolha
     } else if (escolha == "tesoura"){
+        imagem.setAttribute("src", "images/tesoura.png")
         return escolha
     } else{
         return getHumanChoice()
@@ -48,7 +51,8 @@ function playRound(computerChoice, humanChoice) {
 
 function handleClick(humanChoice) {
     const computerChoice = getComputerChoice();
-    playRound(computerChoice, humanChoice);
+    const validChoice = getHumanChoice(humanChoice);
+    playRound(computerChoice, validChoice);
     jogadorPontuacao.textContent = humanScore;
     computadorPontuacao.textContent = computerScore;
     if(humanScore == 5){
@@ -70,6 +74,6 @@ let computadorPontuacao = document.querySelector("#computer-score")
 jogadorPontuacao.textContent = humanScore
 computadorPontuacao.textContent = computerScore
 
-btnPedra.addEventListener("click", () => handleClick("pedra"));
+btnPedra.addEventListener("click", () => handleClick("pedra") );
 btnPapel.addEventListener("click", () => handleClick("papel"));
 btnTesoura.addEventListener("click", () => handleClick("tesoura"));
