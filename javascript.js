@@ -1,9 +1,3 @@
-const btnPedra = document.querySelector("#jogue-pedra")
-const btnPapel = document.querySelector("#jogue-pedra")
-const btnTesoura = document.querySelector("#jogue-pedra")
-
-
-
 let humanScore = 0;
 let computerScore = 0;
 let empates = 0
@@ -21,8 +15,16 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice(){
-    
+function getHumanChoice() {
+    if(escolha == "pedra"){
+        return escolha
+    } else if (escolha == "papel"){
+        return escolha
+    } else if (escolha == "tesoura"){
+        return escolha
+    } else{
+        return getHumanChoice()
+    }
 }
 
 function playRound(computerChoice, humanChoice) {
@@ -32,36 +34,42 @@ function playRound(computerChoice, humanChoice) {
         (computerChoice === "tesoura" && humanChoice === "pedra")
     ){
         humanScore++;
-        alert(`${humanChoice} vence ${computerChoice}. jogador ganhou!`);
     } else if (
         (computerChoice === "pedra" && humanChoice === "tesoura")||
         (computerChoice === "papel" && humanChoice === "pedra")||
         (computerChoice === "tesoura" && humanChoice === "papel")
     ){
         computerScore++
-        alert(`${computerChoice} vence ${humanChoice}. Computador ganhou!`)
     } else if(computerChoice == humanChoice){
-        alert(`Deu empate!`)
         empates++
     }
     
 }
 
-
-
-
-function playGame(){
-    for(let p = 1; p<=5; p++){
-        let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice();
-        playRound(computerChoice, humanChoice);
+function handleClick(humanChoice) {
+    const computerChoice = getComputerChoice();
+    playRound(computerChoice, humanChoice);
+    jogadorPontuacao.textContent = humanScore;
+    computadorPontuacao.textContent = computerScore;
+    if(humanScore == 5){
+        
+    }else if(computerScore == 5){
         
     }
-    if(humanScore>computerScore){
-        alert(`Pontuação jogador: ${humanScore}.`+"\n"+`Pontuação computador: ${computerScore}.`+"\n"+`Empates: ${empates}`+"\n"+`Jogador ganhou!`);
-    } else{
-        alert(`Pontuação jogador: ${humanScore}.`+"\n"+`Pontuação computador: ${computerScore}.`+"\n"+`Empates: ${empates}`+"\n"+`Computador ganhou!`);
-    }
-    
+    console.log(empates)
 }
-playGame()
+
+
+
+let btnPedra = document.querySelector("#jogue-pedra")
+let btnPapel = document.querySelector("#jogue-papel")
+let btnTesoura = document.querySelector("#jogue-tesoura")
+let btnStart = document.querySelector("#start-btn")
+let jogadorPontuacao = document.querySelector("#human-score")
+let computadorPontuacao = document.querySelector("#computer-score")
+jogadorPontuacao.textContent = humanScore
+computadorPontuacao.textContent = computerScore
+
+btnPedra.addEventListener("click", () => handleClick("pedra"));
+btnPapel.addEventListener("click", () => handleClick("papel"));
+btnTesoura.addEventListener("click", () => handleClick("tesoura"));
