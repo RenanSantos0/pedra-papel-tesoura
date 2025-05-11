@@ -20,6 +20,7 @@ main{
 .buttons{
     display: flex;
     flex-direction: row;
+    margin-bottom: auto;
 }
 
 #jogue-pedra,
@@ -27,7 +28,7 @@ main{
 #jogue-tesoura{
     margin: 20px;
     border: 4px solid #5C3A21;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 10px;
     color: 	#5C3A21;
     background-color: 	#CCAA6E;
@@ -40,6 +41,10 @@ main{
     background-color: #CCAA6E;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
 
 .image-player-choseen,
@@ -56,6 +61,7 @@ main{
 .resultados-container{
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
 }
 
 .resultado{
@@ -65,4 +71,10 @@ main{
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.barra{
+    background-color: #5C3A21;
+    width: 100%;
+    height: 4px;
 }

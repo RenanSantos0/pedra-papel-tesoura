@@ -2,28 +2,32 @@ let humanScore = 0;
 let computerScore = 0;
 let empates = 0
 
-let imagem = document.querySelector("#imagem-jogador")
+let imagemPlayer = document.querySelector("#imagem-jogador")
+let imagemComputer = document.querySelector("#imagem-computador")
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*3)
     switch (randomNumber){
         case 0:
+            imagemComputer.setAttribute("src", "images/pedra.png")
             return "pedra"
         case 1:
+            imagemComputer.setAttribute("src", "images/paper.png")
             return "papel"
         case 2:
+            imagemComputer.setAttribute("src", "images/tesoura.png")
             return "tesoura"
     }
 }
 
 function getHumanChoice(escolha) {
     if(escolha == "pedra"){
-        imagem.setAttribute("src", "images/pedra.png")
+        imagemPlayer.setAttribute("src", "images/pedra.png")
         return escolha
     } else if (escolha == "papel"){
-        imagem.setAttribute("src", "images/paper.png")
+        imagemPlayer.setAttribute("src", "images/paper.png")
         return escolha
     } else if (escolha == "tesoura"){
-        imagem.setAttribute("src", "images/tesoura.png")
+        imagemPlayer.setAttribute("src", "images/tesoura.png")
         return escolha
     } else{
         return getHumanChoice()
