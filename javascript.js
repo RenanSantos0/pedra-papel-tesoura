@@ -60,9 +60,12 @@ function handleClick(humanChoice) {
     jogadorPontuacao.textContent = humanScore;
     computadorPontuacao.textContent = computerScore;
     if(humanScore == 5){
-        
+        againContainer.style.display = "flex"
+        gameScreen.style.opacity = "0.33"
+        btnPedra.removeEventListener("click", () => handleClick("pedra") )
     }else if(computerScore == 5){
-        
+        againContainer.style.display = "flex"
+        gameScreen.style.opacity = "0.33"
     }
     console.log(empates)
 }
@@ -72,12 +75,19 @@ function handleClick(humanChoice) {
 let btnPedra = document.querySelector("#jogue-pedra")
 let btnPapel = document.querySelector("#jogue-papel")
 let btnTesoura = document.querySelector("#jogue-tesoura")
-let btnStart = document.querySelector("#start-btn")
+let btnStart = document.querySelector(".start-button")
 let jogadorPontuacao = document.querySelector("#human-score")
 let computadorPontuacao = document.querySelector("#computer-score")
 jogadorPontuacao.textContent = humanScore
 computadorPontuacao.textContent = computerScore
+const gameScreen = document.querySelector("#game-screen")
+const startScreen = document.querySelector("#start-screen")
+const againContainer = document.querySelector(".again-container")
 
 btnPedra.addEventListener("click", () => handleClick("pedra") );
 btnPapel.addEventListener("click", () => handleClick("papel"));
 btnTesoura.addEventListener("click", () => handleClick("tesoura"));
+btnStart.addEventListener("click", () =>{
+    gameScreen.style.display = "flex";
+    startScreen.style.display = "none"
+});

@@ -6,15 +6,51 @@
     font-weight: 700;
 }
 
-body{
-    background-color: #F2E4C7;
-}
-
-main{
+header{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: #5C3A21;
+}
+
+#start-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-screen{
+    display: none;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+#start-screen,
+#game-screen{
+    width: 100vw;
+    height: 90vh;
+}
+
+.start-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    border: 4px solid #5C3A21;
+    border-radius: 5px;
+    padding: 10px;
+    color: 	#5C3A21;
+    background-color: 	#CCAA6E;
+    font-size: 30px;
+}
+
+body{
+    background-color: #F2E4C7;
 }
 
 .buttons{
@@ -77,4 +113,19 @@ main{
     background-color: #5C3A21;
     width: 100%;
     height: 4px;
+}
+
+#again-screen{
+    justify-content: center;
+    align-items: center;
+}
+
+.again-container{
+    display: none;
+    width: 25vw;
+    height: 35vh;
+    border-radius: 10px;
+    border: 4px solid #5C3A21;
+    background-color: #CCAA6E;
+    margin-top: -55vh;
 }

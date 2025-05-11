@@ -10,7 +10,12 @@
   <header>
     <h1>Pedra papel tesoura</h1>
   </header>
-  <main>
+  <div id="start-screen">
+    <div class="start-button">
+      <a>START</a>
+    </div>
+  </div>
+  <main id="game-screen">
     <h2>Jogue contra o computador</h2>
     <p id="resultado">Escolha entre pedra, papel ou tesoura e veja quem ganha!</p>
     <div class="resultados-container">
@@ -39,8 +44,11 @@
         <div id="jogue-tesoura">TESOURA</div>
       </div>
     </div>
-
-
+    <div id="again-screen">
+      <div class="again-container">
+        <div class="ganhou-perdeu"></div>
+      </div>
+    </div>
   </main>
   <script src="javascript.js"></script>
 </body>
